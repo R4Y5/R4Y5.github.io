@@ -270,4 +270,42 @@ ul {
   color: black;
 }
 
+/* Activity 4 */
+.title-section-act4 h1 {
+  font-family: "Special Gothic Expanded One", cursive;
+  font-size: 10vw;
+  color: rgb(228, 228, 228);
+  margin: 80px 70px;
+  line-height: 0.40;
+}
+
+.title-section-act4 p {
+  font-size: 3vw;
+  color: white;
+  margin: 90px 70px -25px;
+  line-height: 1;
+}
+
+.scroll-btn-act1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  padding-top: 5px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.scroll-btn-act1 .material-symbols-outlined {
+  font-size: 30px;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 10px;
+  transition: background 0.3s, color 0.3s ease;
+}
+
+.scroll-btn-act1:hover .material-symbols-outlined {
+  background: #ffffff;
+  color: black;
+}
 
