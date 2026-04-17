@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study 2 | Adding Users </title>
+    <link rel="icon" href="/Includes/Images/logo.png" />
+    <link rel="stylesheet" href="/Includes/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Special+Gothic+Expanded+One&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=archive,cards_stack,contacts,database,desktop_windows,domain,install_desktop,keyboard_arrow_down,language,person_add,share,storage"
+    />
+  </head>
+
+  <body>
+
+    <div id="header-placeholder"></div>
+
+    <!-- PAGE CONTENT -->
+    <div class="content">
+      <div class="title-section-cs2">
+        <p>CASE STUDY 2</p>
+        <h1>ADDING<br><br>USERS.</h1>
+      </div>
+
+      <!-- DESCRIPTION SECTION -->
+      <div class="description-section">
+        <div class="description-content">
+
+          <h2 class="description-title">Overview</h2>
+          <p class="description-text">
+            Hands-on: creating user accounts, organizational units, and basic user management
+            in Active Directory. Implement OU, users, and Group Policies for the scenario.
+          </p>
+
+          <h2 class="description-title">Domain Users & Organizational Units</h2>
+
+          <h2 class="description-title">Add Domain Users</h2>
+          <p class="description-text">Distribute IT student names to all dept/section/area.</p>
+
+          <ul class="description-steps">
+            <li>
+              Academic Department
+              <ul class="description-substeps">
+                <li>Basic Art and Sciences Department</li>
+                <li>BTVTE Electrical</li>
+                <li>BTVTE Electronics</li>
+                <li>BTVTE Computer Hardware</li>
+                <li>BTVTE Computer Software</li>
+                <li>Electrical and Allied Department</li>
+                <li>Information Technology</li>
+                <li>Electrical Engineering</li>
+                <li>Electronics Engineering</li>
+                <li>Instrumentation and Control Technology</li>
+                <li>BET Mechatronics</li>
+                <li>Mechanical and Allied Department</li>
+                <li>Mechanical Engineering Technology</li>
+                <li>RAC Engineering Technology</li>
+                <li>Non Destructive Engineering Technology</li>
+                <li>Electromechanical Engineering Technology</li>
+                <li>Automotive Engineering Technology</li>
+                <li>BET ElectroMechanical</li>
+                <li>Civil and Allied Department</li>
+                <li>Civil Engineering</li>
+                <li>Civil Engineering Technology</li>
+                <li>Environmental Science</li>
+                <li>Chemical Engineering Technology</li>
+              </ul>
+            </li>
+            <li>
+              Administrative Department
+              <ul class="description-substeps">
+                <li>Registrar's Office</li>
+                <li>Director's Office</li>
+                <li>Research and Extension</li>
+                <li>Human Resource and Management Office</li>
+                <li>Finance Office</li>
+                <li>Supply and Procurement</li>
+                <li>Records Office</li>
+                <li>Library Services</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h2 class="description-title">Steps</h2>
+          <ul class="description-steps">
+            <li>
+              Create domain users for each department/office and technology section
+              <span class="step-detail">— use real names when creating domain accounts</span>
+            </li>
+            <li>
+              Create an organizational unit for each technology section or office
+              <span class="step-detail">— e.g., computer engineering, electronics, registrar, research</span>
+            </li>
+            <li>
+              Restrict all users to log on only to assigned workstations
+              <span class="step-detail">— XP class A network, 7 class B network</span>
+              <ul class="description-substeps">
+                <li>Users → Properties → Computer Restrictions → select which computer</li>
+              </ul>
+            </li>
+            <li>
+              Set password expiry to every 30 days for all users
+              <ul class="description-substeps">
+                <li>Go to Group Policy Management → create a GPO for Academic & Administrative</li>
+                <li>Academic: <span class="step-detail">Academic Password</span> | Administrative: <span class="step-detail">Administrative Password</span></li>
+                <li>Click Edit → Computer Config → Security Settings → Account Policies → Password Policies</li>
+                <li>Maximum Password Age → Properties → 30 days → Apply → OK</li>
+              </ul>
+            </li>
+            <li>
+              Set logon hour restrictions per user type
+              <ul class="description-substeps">
+                <li>Academic users <span class="step-detail">— 7:30 AM to 8:45 AM</span></li>
+                <li>Administrative staff <span class="step-detail">— 7:00 AM to 7:00 PM</span></li>
+                <li>Select Users in each Department → Properties → Account → Log on Hours → select time range → log on permitted</li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="description-tags">
+            <span class="tag">Active Directory</span>
+            <span class="tag">Domain Users</span>
+            <span class="tag">Organizational Units</span>
+            <span class="tag">Group Policy</span>
+            <span class="tag">Password Policy</span>
+            <span class="tag">Logon Hours</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe width="800" height="500"
+        src="https://www.youtube.com/embed/ezFUGjwIhME?si=nnysFmaDPZse_9PC"
+        title="Active Directory- Creating Users"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <script src="/Includes/script.js"></script>
+  </body>
+</html>

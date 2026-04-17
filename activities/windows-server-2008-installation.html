@@ -24,15 +24,162 @@
       <div class="title-section-act">
         <p>ACTIVITY 1</p>
         <h1>WINDOWS <br/><br/>SERVER<br/><br />2008.</h1>
-        <div
-          class="scroll-btn-act1"
-          onclick="
-            document
-              .querySelector('.video-container')
-              .scrollIntoView({ behavior: 'smooth' })
-          "
-        >
-          <span class="material-symbols-outlined">keyboard_arrow_down</span>
+      </div>
+
+      <!-- DESCRIPTION SECTION -->
+      <div class="description-section">
+        <div class="description-content">
+
+          <h2 class="description-title">Description</h2>
+          <p class="description-text">
+            Windows Server 2008 Installation Guide using Oracle VirtualBox.
+            This guide walks through creating and configuring a virtual machine
+            for educational and lab purposes.
+          </p>
+
+          <h2 class="description-title">Requirements</h2>
+          <ul class="description-steps">
+
+            <li>
+              Software
+              <ul class="description-substeps">
+                <li>Install Oracle VirtualBox</li>
+                <li>Install VirtualBox Extension Pack (matching version)</li>
+              </ul>
+            </li>
+
+            <li>
+              Windows Server 2008 ISO
+              <ul class="description-substeps">
+                <li>Microsoft evaluation downloads</li>
+                <li>Academic software portals</li>
+                <li>School-provided installer</li>
+              </ul>
+            </li>
+
+            <li>
+              Virtual Machine Specifications
+              <ul class="description-substeps">
+                <li>RAM: 2 GB</li>
+                <li>CPU: 2 cores</li>
+                <li>Storage: 40 GB</li>
+                <li>Graphics: 128 MB video memory</li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <h2 class="description-title">Steps</h2>
+          <ul class="description-steps">
+
+            <li>
+              Create Virtual Machine
+              <ul class="description-substeps">
+                <li>Open VirtualBox → Click New</li>
+                <li>Name: Windows Server 2008</li>
+                <li>Type: Microsoft Windows</li>
+                <li>Version: Windows 2008 (64-bit)</li>
+                <li>Click Next</li>
+              </ul>
+            </li>
+
+            <li>
+              Allocate Memory
+              <ul class="description-substeps">
+                <li>Set RAM to 2048 MB (2 GB)</li>
+                <li>Click Next</li>
+              </ul>
+            </li>
+
+            <li>
+              Create Virtual Hard Disk
+              <ul class="description-substeps">
+                <li>Select "Create a virtual hard disk now"</li>
+                <li>Choose VDI format</li>
+                <li>Select Dynamically Allocated</li>
+                <li>Set size to 40 GB</li>
+                <li>Click Create</li>
+              </ul>
+            </li>
+
+            <li>
+              Attach Windows Server ISO
+              <ul class="description-substeps">
+                <li>Select VM → Settings → Storage</li>
+                <li>Under Controller IDE, select Empty</li>
+                <li>Click disk icon → Choose disk file</li>
+                <li>Select Windows Server 2008 ISO</li>
+                <li>Click OK</li>
+              </ul>
+            </li>
+
+            <li>
+              Start Installation
+              <ul class="description-substeps">
+                <li>Click Start</li>
+                <li>Select language and time format</li>
+                <li>Click Next</li>
+              </ul>
+            </li>
+
+            <li>
+              Install Windows
+              <ul class="description-substeps">
+                <li>Click Install Now</li>
+                <li>Select edition (Standard / Enterprise)</li>
+                <li>Accept license terms</li>
+                <li>Choose Custom (Advanced)</li>
+              </ul>
+            </li>
+
+            <li>
+              Partition Disk
+              <ul class="description-substeps">
+                <li>Select virtual disk</li>
+                <li>Click New → Create partition</li>
+                <li>Click Next</li>
+                <li>Wait for installation and restarts</li>
+              </ul>
+            </li>
+
+            <li>
+              Administrator Setup
+              <ul class="description-substeps">
+                <li>Create Administrator password</li>
+                <li>Log in to the server</li>
+              </ul>
+            </li>
+
+            <li>
+              Install Guest Additions
+              <ul class="description-substeps">
+                <li>Click Devices → Insert Guest Additions CD</li>
+                <li>Run VBoxWindowsAdditions.exe</li>
+                <li>Restart VM</li>
+                <li>Improves graphics and performance</li>
+              </ul>
+            </li>
+
+            <li>
+              Activation Options
+              <ul class="description-substeps">
+                <li>Use valid Microsoft product key</li>
+                <li>Use school/enterprise license</li>
+                <li>Use evaluation license (limited)</li>
+                <li>Activate via Control Panel → System</li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <div class="description-tags">
+            <span class="tag">Windows Server</span>
+            <span class="tag">VirtualBox</span>
+            <span class="tag">Virtual Machine</span>
+            <span class="tag">Installation</span>
+            <span class="tag">Lab Setup</span>
+          </div>
+
         </div>
       </div>
 

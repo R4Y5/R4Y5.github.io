@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study 4 | File Sharing </title>
+    <link rel="icon" href="/Includes/Images/logo.png" />
+    <link rel="stylesheet" href="/Includes/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Special+Gothic+Expanded+One&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=archive,cards_stack,contacts,database,desktop_windows,domain,install_desktop,keyboard_arrow_down,language,person_add,share,storage"
+    />
+  </head>
+
+  <body>
+
+    <div id="header-placeholder"></div>
+
+    <!-- PAGE CONTENT -->
+    <div class="content">
+      <div class="title-section-cs2">
+        <p>CASE STUDY 4</p>
+        <h1>FILE<br><br>SHARING.</h1>
+      </div>
+
+      <!-- DESCRIPTION SECTION -->
+      <div class="description-section">
+        <div class="description-content">
+
+          <h2 class="description-title">Overview</h2>
+          <p class="description-text">
+            Design and deploy file shares, NTFS permissions, and access controls for departmental
+            resources. Design file shares and set NTFS and share permissions for groups.
+          </p>
+
+          <h2 class="description-title">File Services Requirements</h2>
+          <ul class="description-steps">
+            <li>All departments/sections should have one public folder <span class="step-detail">— read/write; domain users cannot access other department folders</span></li>
+            <li>A university public folder where all domain users can access <span class="step-detail">— read/write</span></li>
+            <li>An installer folder containing applications <span class="step-detail">— administrator access only</span></li>
+            <li>All folders except Computer Engineering should contain only office documents <span class="step-detail">— .ppt, .doc, .docx, .xls, .pptx, .pdf, etc.</span></li>
+            <li>Information Technology folder should contain all files <span class="step-detail">— except executable files</span></li>
+            <li>Storage quota for each folder <span class="step-detail">— 1 GB</span></li>
+            <li>Map the shared folder for each client workstation</li>
+          </ul>
+
+          <h2 class="description-title">Step 1 — Create Folders</h2>
+          <ul class="description-steps">
+            <li>Create directories from Part 2 <span class="step-detail">— departments/sections</span></li>
+            <li>Create University folder</li>
+            <li>Create Installer folder</li>
+            <li>Optional: Run a script to automate folder creation</li>
+          </ul>
+
+          <h2 class="description-title">Step 2 — Configure File Services</h2>
+          <ul class="description-steps">
+            <li>Server Manager → Roles → Add Roles → <span class="step-detail">File Services</span></li>
+            <li>Click Next → Next</li>
+            <li>Check all options <span class="step-detail">— except Windows Server 2003 File Services</span></li>
+            <li>DFS Namespaces: Enter Namespace Name <span class="step-detail">— NameSpace1</span></li>
+            <li>Click Next → Next</li>
+            <li>In Credentials section: Click Select → type domain admin username and password</li>
+            <li>Click Next → Next</li>
+            <li>Select local disk <span class="step-detail">— C Drive</span></li>
+            <li>Click Next until installation completes</li>
+            <li>Restart system</li>
+          </ul>
+
+          <h2 class="description-title">Step 3 — Quota Management</h2>
+          <ul class="description-steps">
+            <li>Start → Administrative Tools → <span class="step-detail">File Server Resource Manager</span></li>
+            <li>Navigate to Quota Management → Quota Templates</li>
+            <li>
+              Create New Quota Template
+              <ul class="description-substeps">
+                <li>Template Name: <span class="step-detail">1GB</span></li>
+                <li>Space Limit: <span class="step-detail">1 GB</span></li>
+                <li>Click Add</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h2 class="description-title">Step 4 — File Screening Management</h2>
+          <ul class="description-steps">
+            <li>
+              General File Screen Template
+              <ul class="description-substeps">
+                <li>Permissions: Read/Write | Users: All</li>
+                <li>Files: <span class="step-detail">.ppt, .doc, .docx, .xls, .pptx, .pdf, etc.</span></li>
+                <li>File Template Name: <span class="step-detail">General File Screen</span> — Check all except General</li>
+              </ul>
+            </li>
+            <li>
+              IT File Screen Template
+              <ul class="description-substeps">
+                <li>Permissions: Read/Write | Users: Information Technology department</li>
+                <li>File Screen Template: Check all <span class="step-detail">— except Executable Files</span></li>
+              </ul>
+            </li>
+            <li>
+              Steps to Create Templates
+              <ul class="description-substeps">
+                <li>File Groups → Create File Group with appropriate name</li>
+                <li>File Template → Create File Template with restrictions as specified</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h2 class="description-title">Step 5 — Provision Shares</h2>
+          <ul class="description-steps">
+            <li>Administrative Tools → Server Manager → Roles → File Services → <span class="step-detail">Share and Storage Management</span></li>
+            <li>Click Create Provision Share → Open Shared Folder Provision Wizard</li>
+            <li>Select folder location → Available Volumes: <span class="step-detail">C Drive</span></li>
+            <li>Click Next → Next</li>
+            <li>Check <span class="step-detail">SMB (Server Message Block protocol)</span></li>
+            <li>Click Next → Next</li>
+            <li>In SMB Permission section: Add user groups with their specific permissions</li>
+            <li>Click Next → Next → Next</li>
+            <li>Apply Quota: Select the <span class="step-detail">1GB template</span></li>
+            <li>Apply File Screen: Select appropriate template <span class="step-detail">— General or IT</span></li>
+            <li>Click Next → Next → Create → Close</li>
+            <li>
+              University Share
+              <ul class="description-substeps">
+                <li>SMB Share Name: <span class="step-detail">University</span></li>
+                <li>Permissions: Read/Write | Users: All Domain Users</li>
+                <li>File Screen: <span class="step-detail">General</span></li>
+              </ul>
+            </li>
+            <li>
+              Installer Share
+              <ul class="description-substeps">
+                <li>SMB Share Name: <span class="step-detail">Installer$</span></li>
+                <li>Permissions: Read/Write | Users: Administrator only</li>
+                <li>File Screen: <span class="step-detail">General</span></li>
+              </ul>
+            </li>
+            <li>
+              Department Shares <span class="step-detail">— for each department/section from Part 2</span>
+              <ul class="description-substeps">
+                <li>Permissions: Read/Write | Users: Respective department users only</li>
+                <li>File Screen: <span class="step-detail">General</span> — all departments except Computer Engineering</li>
+                <li>File Screen: <span class="step-detail">All Files allowed</span> — Computer Engineering</li>
+                <li>File Screen: <span class="step-detail">IT template</span> — Information Technology</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h2 class="description-title">Step 6 — Map Shared Folders for Client Workstations</h2>
+          <ul class="description-steps">
+            <li>On each Windows XP / Windows 7 workstation</li>
+            <li>Open File Explorer / My Computer</li>
+            <li>Right-click → <span class="step-detail">Map Network Drive</span></li>
+            <li>Select drive letter <span class="step-detail">— e.g., Z:, Y:</span></li>
+            <li>Enter folder path <span class="step-detail">— \\ServerName\ShareName</span></li>
+            <li>Check <span class="step-detail">"Reconnect at logon"</span></li>
+            <li>Click Finish</li>
+            <li>Verify mapped drives appear in File Explorer</li>
+          </ul>
+
+          <div class="description-tags">
+            <span class="tag">File Services</span>
+            <span class="tag">NTFS Permissions</span>
+            <span class="tag">SMB</span>
+            <span class="tag">Quota Management</span>
+            <span class="tag">File Screening</span>
+            <span class="tag">DFS</span>
+            <span class="tag">Share Mapping</span>
+            <span class="tag">Windows Server 2008</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe width="800" height="500"
+        src="https://www.youtube.com/embed/ezFUGjwIhME?si=nnysFmaDPZse_9PC"
+        title="Active Directory- Creating Users"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <script src="/Includes/script.js"></script>
+  </body>
+</html>

@@ -309,3 +309,198 @@ ul {
   color: black;
 }
 
+
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 5% 0% 7%; /* reduced top margin since description section now sits above */
+}
+
+/* Case Study */
+/* CS1 */
+.title-section-cs1 h1 {
+  font-family: "Special Gothic Expanded One", cursive;
+  font-size: 165px;
+  color: rgb(228, 228, 228);
+  margin: 80px 70px;
+  line-height: 0.40;
+}
+
+.title-section-cs1 p {
+  font-size: 3vw;
+  color: white;
+  margin: 90px 70px -25px;
+  line-height: 1;
+}
+
+/* CS2 */
+.title-section-cs2 h1 {
+  font-family: "Special Gothic Expanded One", cursive;
+  font-size: 14vw;
+  color: rgb(228, 228, 228);
+  margin: 80px 70px;
+  line-height: 0.40;
+}
+
+.title-section-cs2 p {
+  font-size: 3vw;
+  color: white;
+  margin: 90px 70px -25px;
+  line-height: 1;
+}
+
+/* CS5 */
+.title-section-cs5 h1 {
+  font-family: "Special Gothic Expanded One", cursive;
+  font-size: 25vw;
+  color: rgb(228, 228, 228);
+  margin: 120px 70px;
+  line-height: 0.40;
+}
+
+.title-section-cs5 p {
+  font-size: 3vw;
+  color: white;
+  margin: 90px 70px -25px;
+  line-height: 1;
+}
+
+/* CS7 */
+.title-section-cs7 h1 {
+  font-family: "Special Gothic Expanded One", cursive;
+  font-size: 17vw;
+  color: rgb(228, 228, 228);
+  margin: 120px 70px;
+  line-height: 0.40;
+}
+
+.title-section-cs7 p {
+  font-size: 3vw;
+  color: white;
+  margin: 90px 70px -25px;
+  line-height: 1;
+}
+
+/* CS8 */
+.title-section-cs8 h1 {
+  font-family: "Special Gothic Expanded One", cursive;
+  font-size: 15vw;
+  color: rgb(228, 228, 228);
+  margin: 120px 70px;
+  line-height: 0.40;
+}
+
+.title-section-cs8 p {
+  font-size: 3vw;
+  color: white;
+  margin: 90px 70px -25px;
+  line-height: 1;
+}
+
+/* DESCRIPTION SECTION */
+.description-section {
+  width: 100%;
+  max-width: 860px;
+  margin: 21% auto 3rem auto; /* pushes it down from the title, consistent with your page rhythm */
+  padding: 2rem 2.5rem;
+  border-left: 3px solid #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+  box-sizing: border-box;
+}
+
+.description-title {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.description-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0 0 1.5rem 0;
+  color: rgb(186, 186, 186); /* matches your .text-contents p color */
+  opacity: 1;
+}
+
+.description-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: rgb(171, 171, 171); /* matches your nav hover color */
+  opacity: 1;
+  text-transform: uppercase;
+} 
+
+
+.description-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  counter-reset: step-counter;
+}
+
+.description-steps li {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  color: rgb(186, 186, 186);
+  line-height: 1.8;
+  padding: 0.3rem 0 0.3rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  counter-increment: step-counter;
+  position: relative;
+}
+
+.description-steps li::before {
+  content: counter(step-counter, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
+  top: 0.45rem;
+}
+
+.step-detail {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85rem;
+}
+
+
+.description-substeps {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0.4rem 1.5rem;
+  counter-reset: none;
+}
+
+.description-substeps li {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  color: rgba(186, 186, 186, 0.75);
+  line-height: 1.8;
+  padding: 0.15rem 0 0.15rem 1.2rem;
+  border-bottom: none;
+  counter-increment: none;
+  position: relative;
+}
+
+.description-substeps li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+}

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study 3 | DHCP Server </title>
+    <link rel="icon" href="/Includes/Images/logo.png" />
+    <link rel="stylesheet" href="/Includes/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Special+Gothic+Expanded+One&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=archive,cards_stack,contacts,database,desktop_windows,domain,install_desktop,keyboard_arrow_down,language,person_add,share,storage"
+    />
+  </head>
+
+  <body>
+
+    <div id="header-placeholder"></div>
+
+    <!-- PAGE CONTENT -->
+    <div class="content">
+      <div class="title-section-cs2">
+        <p>CASE STUDY 3</p>
+        <h1>DHCP<br><br>SERVER.</h1>
+      </div>
+
+      <!-- DESCRIPTION SECTION -->
+      <div class="description-section">
+        <div class="description-content">
+
+          <h2 class="description-title">Overview</h2>
+          <p class="description-text">
+            Configure DHCP services, scopes, and reservations to provide network addressing
+            for the domain. Configure network roles and ensure clients receive proper settings.
+          </p>
+
+          <h2 class="description-title">DHCP Server Requirements</h2>
+          <ul class="description-steps">
+            <li>IP Block <span class="step-detail">— 172.31.0.0 /16 &amp; 10.0.0.0 /8</span></li>
+            <li>Router IP address <span class="step-detail">— valid IP address</span></li>
+            <li>
+              DNS Server IP
+              <ul class="description-substeps">
+                <li>Same as DHCP server</li>
+                <li>Google <span class="step-detail">— 8.8.8.8, 8.8.4.4</span></li>
+                <li>OpenDNS <span class="step-detail">— 208.67.222.222, 208.67.220.220</span></li>
+              </ul>
+            </li>
+            <li>IP address lease expires every <span class="step-detail">— 8 hours</span></li>
+            <li>Do NOT distribute first 30 and last 30 valid IP addresses</li>
+          </ul>
+
+          <h2 class="description-title">Setup Steps</h2>
+          <ul class="description-steps">
+            <li>Clone Windows Server 2008</li>
+            <li>Clone Windows 7 &amp; XP</li>
+            <li>Select WS2008 → Settings → Network → Change Adapter 1 &amp; 2 to <span class="step-detail">Internal Network</span></li>
+            <li>
+              Configure WS2008 Network
+              <ul class="description-substeps">
+                <li>Settings → Network → Rename Adapter 1 as <span class="step-detail">XPFEMALENET</span></li>
+                <li>Rename Adapter 2 as <span class="step-detail">7MALENET</span></li>
+              </ul>
+            </li>
+            <li>Go to WSXP settings → Network → Rename Adapter 1 as <span class="step-detail">XPFEMALENET</span></li>
+            <li>Go to WS7 settings → Network → Rename Adapter 1 as <span class="step-detail">7MALENET</span></li>
+            <li>Start WS2008</li>
+            <li>Configure Networking <span class="step-detail">— Control Panel → Network &amp; Internet → Network Connections → Change Adapter Settings → Right click LAN → Properties</span></li>
+            <li>
+              Set IPv4 Properties
+              <ul class="description-substeps">
+                <li>Local Area Connection 1 <span class="step-detail">(Female)</span> — IP: 172.31.0.31 | Subnet: 255.255.255.0 | Gateway: 172.31.0.32 | DNS: 127.0.0.1</li>
+                <li>Local Area Connection 2 <span class="step-detail">(Male)</span> — IP: 10.0.0.31 | Subnet: 255.0.0.0 | Gateway: 10.0.0.32 | DNS: 127.0.0.1</li>
+              </ul>
+            </li>
+            <li>Add DHCP Server Role <span class="step-detail">— Start → Administrative Tools → Server Manager → Roles → Add Roles → Select DHCP SERVER</span></li>
+            <li>Validate settings and install DHCP</li>
+            <li>Open DHCP <span class="step-detail">— Start → Administrative Tools → DHCP</span></li>
+            <li>
+              Create New Scopes
+              <ul class="description-substeps">
+                <li>
+                  Class A Female-XP Scope
+                  <ul class="description-substeps">
+                    <li>Start IP: 172.31.0.1 | End IP: 172.31.0.254</li>
+                    <li>Subnet Mask: 255.255.255.0</li>
+                    <li>Exclusions: 172.31.0.1–30 &amp; 172.31.0.225–254</li>
+                    <li>Duration: 8 hours | Gateway: 172.31.0.32 | Domain: tupt.edu.ph</li>
+                  </ul>
+                </li>
+                <li>
+                  Class B Male-7 Scope
+                  <ul class="description-substeps">
+                    <li>Start IP: 10.0.0.1 | End IP: 10.0.0.254</li>
+                    <li>Subnet Mask: 255.0.0.0</li>
+                    <li>Exclusions: 10.0.0.1–30 &amp; 10.0.0.225–254</li>
+                    <li>Duration: 8 hours | Gateway: 10.0.0.32 | Domain: tupt.edu.ph</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Configure DNS Servers for both scopes <span class="step-detail">— remove 127.0.0.1</span>
+              <ul class="description-substeps">
+                <li>Primary: <span class="step-detail">8.8.8.8</span> — Google</li>
+                <li>Secondary: <span class="step-detail">8.8.4.4</span> — Google</li>
+                <li>Tertiary: <span class="step-detail">208.67.222.222</span> — OpenDNS</li>
+                <li>Quaternary: <span class="step-detail">208.67.220.220</span> — OpenDNS</li>
+              </ul>
+            </li>
+            <li>
+              Configure Windows XP
+              <ul class="description-substeps">
+                <li>Start Windows XP VM while keeping WS2008 running</li>
+                <li>Rename computer: START → Right click My Computer → Properties → Computer Name → Change → <span class="step-detail">LASTNAME_CS-XP</span></li>
+                <li>Join domain: <span class="step-detail">tupt.edu.ph</span> → OK</li>
+                <li>Enter credentials: Username: Administrator | Password: WS2008 admin password</li>
+                <li>Welcome message → OK → Restart</li>
+                <li>Log in as <span class="step-detail">TUPT\administrator</span> and test with another domain user</li>
+              </ul>
+            </li>
+            <li>
+              Configure Windows 7
+              <ul class="description-substeps">
+                <li>Repeat all steps from Windows XP configuration</li>
+                <li>Rename computer as <span class="step-detail">LASTNAME_CS-WIN7</span></li>
+                <li>Join domain: <span class="step-detail">tupt.edu.ph</span> with same credentials</li>
+                <li>Log in as <span class="step-detail">TUPT\administrator</span> and test with another domain user</li>
+              </ul>
+            </li>
+            <li>
+              Connect Windows XP &amp; 7 using DHCP
+              <ul class="description-substeps">
+                <li>Start WS2008, WXP &amp; W7</li>
+                <li>Check Address Leases: WS2008 → Start → Administrative Tools → DHCP → Expand Domain → Expand IPv4 → Address Leases</li>
+                <li>Class B Male network should show W7 connected</li>
+                <li>Class A Female network should show WXP connected</li>
+                <li>Verify on W7: Command Prompt → <span class="step-detail">ipconfig /all</span> — DHCP enabled with IP from Class B Male</li>
+                <li>Verify on WXP with same command — should show Class A Female IP</li>
+              </ul>
+            </li>
+            <li>
+              Troubleshooting: Domain Connection Errors
+              <ul class="description-substeps">
+                <li>If error "Cannot connect to your domain controller" occurs:</li>
+                <li>Verify DHCP → Class A or B → Scope Options → 006 DNS Servers has NO <span class="step-detail">127.0.0.1</span></li>
+                <li>Run in Command Prompt: <span class="step-detail">ipconfig /release</span> → <span class="step-detail">ipconfig /renew</span> → <span class="step-detail">ipconfig /all</span></li>
+                <li>Verify DNS servers in ipconfig output match scope options</li>
+                <li>Attempt to reconnect to domain</li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="description-tags">
+            <span class="tag">DHCP</span>
+            <span class="tag">Windows Server 2008</span>
+            <span class="tag">IPv4</span>
+            <span class="tag">Scopes</span>
+            <span class="tag">DNS</span>
+            <span class="tag">Windows XP</span>
+            <span class="tag">Windows 7</span>
+            <span class="tag">tupt.edu.ph</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe width="800" height="500"
+        src="https://www.youtube.com/embed/ezFUGjwIhME?si=nnysFmaDPZse_9PC"
+        title="Active Directory- Creating Users"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <script src="/Includes/script.js"></script>
+  </body>
+</html>

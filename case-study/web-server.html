@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study 7 | Web Server </title>
+    <link rel="icon" href="/Includes/Images/logo.png" />
+    <link rel="stylesheet" href="/Includes/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Special+Gothic+Expanded+One&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=archive,cards_stack,contacts,database,desktop_windows,domain,install_desktop,keyboard_arrow_down,language,person_add,share,storage"
+    />
+  </head>
+
+  <body>
+
+    <div id="header-placeholder"></div>
+
+    <!-- PAGE CONTENT -->
+    <div class="content">
+      <div class="title-section-cs7">
+        <p>CASE STUDY 7</p>
+        <h1>WEB<br><br>SERVER.</h1>
+      </div>
+
+      <!-- DESCRIPTION SECTION -->
+      <div class="description-section">
+        <div class="description-content">
+
+          <h2 class="description-title">Description</h2>
+          <p class="description-text">
+            Deploy and configure web server roles (IIS) to host academic web applications and services.
+            Implement security baselines and plan patch deployment.
+          </p>
+
+          <h2 class="description-title">Requirements</h2>
+          <ul class="description-steps">
+            <li>Create a university website for IIS 7</li>
+            <li>Create a website for each department</li>
+            <li>Organize departments as subdirectories in <span class="step-detail">wwwroot</span></li>
+          </ul>
+
+          <h2 class="description-title">Steps</h2>
+          <ul class="description-steps">
+
+            <li>
+              Install Web Server Role
+              <ul class="description-substeps">
+                <li>Open Server Manager</li>
+                <li>Navigate to Roles</li>
+                <li>Click "Add Role"</li>
+                <li>Select Web Server (IIS)</li>
+                <li>Follow installation prompts</li>
+              </ul>
+            </li>
+
+            <li>
+              Add Web Server Features
+              <ul class="description-substeps">
+                <li>Enable Application Development</li>
+                <li>Enable IIS 6 Management Compatibility</li>
+                <li>Enable FTP Server</li>
+                <li>Download AnyToISO Converter</li>
+                <li>Install tool for content management</li>
+              </ul>
+            </li>
+
+            <li>
+              Create and Configure Website
+              <ul class="description-substeps">
+                <li>Open IIS Manager</li>
+                <li>Right-click Sites → Add Website</li>
+                <li>Site Name: tupt</li>
+                <li>Path: C:\inetpub\wwwroot\tupt</li>
+                <li>Create "tupt" folder in wwwroot</li>
+                <li>IP Address: 172.31.0.31</li>
+                <li>Host Name: tupt.edu.ph</li>
+                <li>Click OK</li>
+              </ul>
+            </li>
+
+            <li>
+              Configure Output Caching
+              <ul class="description-substeps">
+                <li>Select "tupt" site in IIS Manager</li>
+                <li>Open Output Caching</li>
+                <li>Add cache rule</li>
+                <li>Extension: .aspx</li>
+                <li>Enable User Mode Caching</li>
+                <li>Save settings</li>
+              </ul>
+            </li>
+
+            <li>
+              Prepare Website Content
+              <ul class="description-substeps">
+                <li>Navigate to wwwroot → tupt</li>
+                <li>Copy iisstart.htm as homepage</li>
+                <li>Create folders:
+                  <ul class="description-substeps">
+                    <li>Academics</li>
+                    <li>Administrative</li>
+                    <li>ComputerEngineering</li>
+                    <li>InformationTechnology</li>
+                  </ul>
+                </li>
+                <li>Add HTML / ASP.NET files to each folder</li>
+              </ul>
+            </li>
+
+            <li>
+              Test Website Access
+              <ul class="description-substeps">
+                <li>Right-click site → Browse</li>
+                <li>Test locally on Windows Server 2008</li>
+                <li>Test on Windows 7: http://tupt.edu.ph/</li>
+                <li>Test on Windows XP: http://tupt.edu.ph/</li>
+                <li>Verify all pages load correctly</li>
+              </ul>
+            </li>
+
+            <li>
+              Web Server Setup Complete
+              <ul class="description-substeps">
+                <li>Hosting university website</li>
+                <li>Serving department content</li>
+                <li>Caching .aspx pages for performance</li>
+                <li>Accessible across all client machines</li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <div class="description-tags">
+            <span class="tag">IIS</span>
+            <span class="tag">Web Server</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">Hosting</span>
+            <span class="tag">ASP.NET</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe width="800" height="500"
+        src="https://www.youtube.com/embed/ezFUGjwIhME?si=nnysFmaDPZse_9PC"
+        title="Active Directory- Creating Users"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <script src="/Includes/script.js"></script>
+  </body>
+</html>
