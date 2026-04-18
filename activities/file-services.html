@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 6 | File and Web Server</title>
+    <link rel="icon" href="/Includes/Images/logo.png" />
+    <link rel="stylesheet" href="/Includes/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Special+Gothic+Expanded+One&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=archive,cards_stack,contacts,database,desktop_windows,domain,install_desktop,keyboard_arrow_down,language,person_add,share,storage"
+    />
+  </head>
+
+  <body>
+
+    <div id="header-placeholder"></div>
+
+    <!-- PAGE CONTENT -->
+    <div class="content">
+      <div class="title-section-act6">
+        <p>ACTIVITY 6 :</p>
+        <h1>FILE<br><br>SERVICES.</h1>
+      </div>
+
+      <!-- DESCRIPTION SECTION -->
+      <div class="description-section">
+        <div class="description-content">
+
+          <h2 class="description-title">Description</h2>
+          <p class="description-text">
+            Configure File Services in Windows Server to create a centralized storage system
+            for domain users. This setup enables secure file sharing, access control, and
+            efficient management of shared resources across the network.
+          </p>
+
+          <h2 class="description-title">Tasks</h2>
+          <ul class="description-steps">
+            <li>Install File Services Role</li>
+            <li>Create shared folders with permissions and file restrictions</li>
+            <li>Manage access control for different user groups</li>
+          </ul>
+
+          <h2 class="description-title">Shared Folders</h2>
+          <ul class="description-steps">
+
+            <li>
+              Public Folder
+              <ul class="description-substeps">
+                <li>Permissions: Read / Write</li>
+                <li>Users: All</li>
+                <li>Allowed Files: All except .exe, .com, .vb, .vbs</li>
+              </ul>
+            </li>
+
+            <li>
+              VB.Net Folder
+              <ul class="description-substeps">
+                <li>Permissions: Read / Write</li>
+                <li>Allowed Files: .zip, .rar</li>
+              </ul>
+            </li>
+
+            <li>
+              C_Programs Folder
+              <ul class="description-substeps">
+                <li>Permissions: Read / Write</li>
+                <li>Allowed Files: .c, .cpp</li>
+              </ul>
+            </li>
+
+            <li>
+              Surname_Section Folder
+              <ul class="description-substeps">
+                <li>Permissions: Full Control</li>
+                <li>Users: Domain Users</li>
+                <li>Allowed Files: .c, .cpp, .pdf, .rar, .docx, .ppt, .dwg</li>
+              </ul>
+            </li>
+
+            <li>
+              PHOTO_Male & PHOTO_FEMALE
+              <ul class="description-substeps">
+                <li>Permissions: Read / Write</li>
+                <li>Access: Based on user gender</li>
+                <li>Allowed Files: .jpg, .gif, .png</li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <div class="description-tags">
+            <span class="tag">File Server</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">File Services</span>
+            <span class="tag">Permissions</span>
+            <span class="tag">Network Storage</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe width="800" height="500"
+        src="https://www.youtube.com/embed/WgGUaT4ceZ4"
+        title="Setting Up File Services on Windows Server 2008 R2 in VirtualBox"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <script src="/Includes/script.js"></script>
+  </body>
+</html>

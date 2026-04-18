@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Activity 2 | Active Directory</title>
@@ -14,23 +14,83 @@
   </head>
 
   <body>
-
     <div id="header-placeholder"></div>
 
     <!-- PAGE CONTENT -->
     <div class="content">
       <div class="title-section-act">
-        <p>ACTIVITY 2</p>
+        <p>ACTIVITY 2 :</p>
         <h1>ACTIVE<br><br>DIRECTORY.</h1>
-        <div
-          class="scroll-btn"
-          onclick="
-            document
-              .querySelector('.video-container')
-              .scrollIntoView({ behavior: 'smooth' })
-          "
-        >
-          <span class="material-symbols-outlined">keyboard_arrow_down</span>
+      </div>
+
+      <!-- DESCRIPTION SECTION -->
+      <div class="description-section">
+        <div class="description-content">
+
+          <h2 class="description-title">Description</h2>
+          <p class="description-text">
+            Configure Active Directory Domain Services (AD DS) and create user accounts
+            for BSIT students within the domain environment. This setup enables centralized
+            authentication, user management, and access control.
+          </p>
+
+          <h2 class="description-title">Tasks</h2>
+          <ul class="description-steps">
+            <li>Create user accounts for BSIT students <span class="step-detail">— 1st to 4th year</span></li>
+            <li>Assign default password <span class="step-detail">— p@ss123</span></li>
+            <li>Organize users by section using groups</li>
+            <li>Domain: <span class="step-detail">tup.local</span></li>
+          </ul>
+
+          <h2 class="description-title">User Configuration</h2>
+          <ul class="description-steps">
+
+            <li>
+              Student Accounts
+              <ul class="description-substeps">
+                <li>Create accounts in Active Directory Users & Computers</li>
+                <li>Use consistent naming convention <span class="step-detail">— e.g., lastname.firstname</span></li>
+                <li>Assign users to their respective section groups</li>
+                <li>Set initial password and require change on first login (optional)</li>
+              </ul>
+            </li>
+
+            <li>
+              Administrator Account
+              <ul class="description-substeps">
+                <li>User cannot change password</li>
+                <li>Password never expires</li>
+                <li>Maintain full administrative privileges</li>
+              </ul>
+            </li>
+
+            <li>
+              Group Organization
+              <ul class="description-substeps">
+                <li>Create groups per year/section <span class="step-detail">— e.g., BSIT-1A, BSIT-2B</span></li>
+                <li>Assign permissions based on group membership</li>
+                <li>Simplifies management of shared resources</li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <h2 class="description-title">Best Practices</h2>
+          <ul class="description-steps">
+            <li>Avoid using the same password long-term for all users</li>
+            <li>Enable password policies via Group Policy</li>
+            <li>Use Organizational Units (OUs) for better structure</li>
+            <li>Regularly review and disable inactive accounts</li>
+          </ul>
+
+          <div class="description-tags">
+            <span class="tag">Active Directory</span>
+            <span class="tag">AD DS</span>
+            <span class="tag">User Management</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">Domain</span>
+          </div>
+
         </div>
       </div>
 
@@ -43,7 +103,9 @@
         allowfullscreen>
         </iframe>
       </div>
+        
     </div>
+  </div>
 
     <script src="/Includes/script.js"></script>
   </body>

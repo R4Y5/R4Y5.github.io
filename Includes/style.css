@@ -286,6 +286,22 @@ ul {
   line-height: 1;
 }
 
+/* Activity 6 */
+.title-section-act6 h1 {
+  font-family: "Special Gothic Expanded One", cursive;
+  font-size: 13vw;
+  color: rgb(228, 228, 228);
+  margin: 80px 70px;
+  line-height: 0.40;
+}
+
+.title-section-act6 p {
+  font-size: 3vw;
+  color: white;
+  margin: 90px 70px -25px;
+  line-height: 1;
+}
+
 .scroll-btn-act1 {
   display: flex;
   justify-content: center;

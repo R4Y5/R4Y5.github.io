@@ -20,17 +20,103 @@
     <!-- PAGE CONTENT -->
     <div class="content">
       <div class="title-section">
-        <p>ACTIVITY 3</p>
+        <p>ACTIVITY 3 :</p>
         <h1>DCHP<br><br>ROLE.</h1>
-        <div
-          class="scroll-btn"
-          onclick="
-            document
-              .querySelector('.video-container')
-              .scrollIntoView({ behavior: 'smooth' })
-          "
-        >
-          <span class="material-symbols-outlined">keyboard_arrow_down</span>
+      </div>
+
+      <!-- DESCRIPTION SECTION -->
+      <div class="description-section">
+        <div class="description-content">
+
+          <h2 class="description-title">Description</h2>
+          <p class="description-text">
+            Install and configure the DHCP Server role to automate IP address assignment
+            and ensure proper domain connectivity for client machines. This setup supports
+            structured network segmentation and centralized management of Windows XP and
+            Windows 7 workstations.
+          </p>
+
+          <h2 class="description-title">Configuration</h2>
+          <ul class="description-steps">
+            <li>Role Installed <span class="step-detail">— DHCP Server</span></li>
+            <li>Server IP <span class="step-detail">— Last usable IP address</span></li>
+            <li>Lease Duration <span class="step-detail">— 16 hours</span></li>
+            <li>Router <span class="step-detail">— Server IP Address</span></li>
+            <li>DNS <span class="step-detail">— Server IP + 8.8.8.8</span></li>
+          </ul>
+
+          <h2 class="description-title">Network Scopes</h2>
+          <ul class="description-steps">
+
+            <li>
+              Class A Network <span class="step-detail">— 10.0.0.0 /8 (Male students)</span>
+              <ul class="description-substeps">
+                <li>Exclusion Range: First 10 and last 10 usable IPs</li>
+                <li>Used for Windows XP clients</li>
+              </ul>
+            </li>
+
+            <li>
+              Class B Network <span class="step-detail">— 172.16.0.0 /16 (Female students)</span>
+              <ul class="description-substeps">
+                <li>Exclusion Range: First 10 and last 10 usable IPs</li>
+                <li>Used for Windows 7 clients</li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <h2 class="description-title">Client Systems</h2>
+          <ul class="description-steps">
+            <li>Windows XP <span class="step-detail">— LASTNAME-XP</span></li>
+            <li>Windows 7 <span class="step-detail">— LASTNAME-WIN7</span></li>
+          </ul>
+
+          <h2 class="description-title">Requirements</h2>
+          <ul class="description-steps">
+
+            <li>
+              IP Assignment
+              <ul class="description-substeps">
+                <li>Windows XP must receive Class A IP</li>
+                <li>Windows 7 must receive Class B IP</li>
+              </ul>
+            </li>
+
+            <li>
+              Domain Integration
+              <ul class="description-substeps">
+                <li>All clients must join the domain</li>
+                <li>Verify connectivity using domain login</li>
+              </ul>
+            </li>
+
+            <li>
+              User Testing
+              <ul class="description-substeps">
+                <li>Login at least 5 student accounts per section</li>
+                <li>Test authentication and network access</li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <h2 class="description-title">Best Practices</h2>
+          <ul class="description-steps">
+            <li>Use reservations for critical devices (servers, printers)</li>
+            <li>Avoid overlapping IP ranges between scopes</li>
+            <li>Ensure DHCP service is authorized in Active Directory</li>
+            <li>Verify DNS resolution for domain services</li>
+          </ul>
+
+          <div class="description-tags">
+            <span class="tag">DHCP</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">Networking</span>
+            <span class="tag">IP Addressing</span>
+            <span class="tag">Domain</span>
+          </div>
+
         </div>
       </div>
 
