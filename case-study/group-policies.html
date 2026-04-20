@@ -26,97 +26,86 @@
 
       <!-- DESCRIPTION SECTION -->
       <div class="description-section">
-        <div class="description-content">
+      <div class="description-content">
 
-          <h2 class="description-title">Description</h2>
-          <p class="description-text">
-            Configure Remote Desktop Services for remote administration and secure access.
-            Design backup schedules and verify recovery procedures.
-          </p>
+        <h2 class="description-title">Description</h2>
+        <p class="description-text">
+          Implement Group Policy Objects (GPOs) to enforce department-specific desktop
+          environments and apply security restrictions across the domain. This ensures
+          centralized management, consistent user experience, and enhanced protection
+          for both users and administrators.
+        </p>
 
-          <h2 class="description-title">Prerequisites</h2>
-          <ul class="description-steps">
-            <li>Start Windows XP VM</li>
-            <li>Start Windows 7 VM</li>
-            <li>Start Windows Server 2008 VM</li>
-          </ul>
+        <h2 class="description-title">Prerequisites</h2>
+        <ul class="description-steps">
+          <li>Active Directory Domain Services configured</li>
+          <li>Windows Server 2008 R2 or later</li>
+          <li>Organizational Units (OUs) for departments</li>
+        </ul>
 
-          <h2 class="description-title">Steps</h2>
-          <ul class="description-steps">
+        <h2 class="description-title">Steps</h2>
+        <ul class="description-steps">
 
-            <li>
-              Enable Remote Desktop on Windows 7
-              <ul class="description-substeps">
-                <li>Open Active Directory Users & Computers (Windows Server 2008)</li>
-                <li>Navigate to Computers container</li>
-                <li>Locate Windows 7 computer object</li>
-                <li>Right-click → Properties</li>
-                <li>Go to Remote Settings tab</li>
-                <li>Select: Allow connections from any version of Remote Desktop</li>
-                <li>Click Apply → OK</li>
-              </ul>
-            </li>
+          <li>
+            Department-Specific Desktop Wallpaper
+            <ul class="description-substeps">
+              <li>Create a GPO (e.g., ACADEMIC WALLPAPER)</li>
+              <li>Navigate to: User Configuration → Policies → Administrative Templates → Desktop → Desktop Wallpaper</li>
+              <li>Enable policy and set wallpaper path</li>
+              <li>Apply and repeat for each department</li>
+            </ul>
+          </li>
 
-            <li>
-              Connect to Windows 7 from Windows Server 2008
-              <ul class="description-substeps">
-                <li>Open Remote Desktop Connection</li>
-                <li>Enter Windows 7 hostname</li>
-                <li>Click Connect</li>
-                <li>Enter user credentials</li>
-                <li>Accept connection prompt on Windows 7</li>
-                <li>Remote session established</li>
-              </ul>
-            </li>
+          <li>
+            Create User and Admin Policies
+            <ul class="description-substeps">
+              <li>Define two GPOs: Users Policy and Admin Policy</li>
+              <li>Enable restrictions in Users Policy</li>
+              <li>Disable restrictions in Admin Policy</li>
+            </ul>
+          </li>
 
-            <li>
-              Enable Remote Desktop on Windows XP
-              <ul class="description-substeps">
-                <li>Right-click My Computer → Properties</li>
-                <li>Go to Remote tab</li>
-                <li>Check: Allow users to connect remotely</li>
-                <li>Click OK</li>
-              </ul>
-            </li>
+          <li>
+            Users Policy Settings
+            <ul class="description-substeps">
+              <li>Prohibit access to Control Panel and PC settings</li>
+              <li>Prevent access to command prompt and registry tools</li>
+              <li>Deny removable storage access</li>
+              <li>Set password length (12 characters) and maximum age (42 days)</li>
+              <li>Configure account lockout (30 minutes, 3 attempts)</li>
+              <li>Remove Start Menu items (Help, Run, My Pictures, My Music, My Network Places)</li>
+              <li>Add Logoff option to Start Menu</li>
+              <li>Remove Task Manager from Ctrl+Alt+Del</li>
+              <li>Set Internet Explorer title bar to domain name</li>
+              <li>Enable auditing for directory service access</li>
+            </ul>
+          </li>
 
-            <li>
-              Connect to Windows XP from Windows Server 2008
-              <ul class="description-substeps">
-                <li>Log off Windows XP first</li>
-                <li>Open Remote Desktop Connection</li>
-                <li>Enter Windows XP hostname</li>
-                <li>Click Connect</li>
-                <li>Accept prompt on Windows XP</li>
-                <li>Enter user credentials</li>
-                <li>Remote session established</li>
-              </ul>
-            </li>
+          <li>
+            Admin Policy Settings
+            <ul class="description-substeps">
+              <li>Disable restrictions applied to Users Policy</li>
+              <li>Ensure administrators retain full system control</li>
+            </ul>
+          </li>
 
-            <li>
-              Important Reminder
-              <ul class="description-substeps">
-                <li>Always log off Windows XP before connecting remotely</li>
-                <li>Same user cannot be logged in locally and remotely at the same time</li>
-              </ul>
-            </li>
+        </ul>
 
-          </ul>
-
-          <div class="description-tags">
-            <span class="tag">Remote Desktop</span>
-            <span class="tag">Windows Server</span>
-            <span class="tag">RDP</span>
-            <span class="tag">Remote Access</span>
-            <span class="tag">Administration</span>
-          </div>
-
+        <div class="description-tags">
+          <span class="tag">Group Policy</span>
+          <span class="tag">Windows Server</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">Security Management</span>
+          <span class="tag">Domain Policies</span>
         </div>
+
       </div>
+    </div>
 
       <div class="video-container">
         <iframe width="800" height="500"
-        src="https://www.youtube.com/embed/ezFUGjwIhME?si=nnysFmaDPZse_9PC"
-        title="Active Directory- Creating Users"
+        src="https://www.youtube.com/embed/grjX7B19hBU"
+        title="Deploying Group Policy Objects Management on Windows Server 2008 R2 VirtualBox | Case Study"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
